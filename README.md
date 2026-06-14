@@ -1,16 +1,45 @@
-# React + Vite
+# Role Tracker Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React frontend for the Role-Based Issue Tracking API. Built with Vite, React, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Live Demo
+[role-tracker-client.vercel.app](https://role-tracker-client.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- JWT authentication with protected routes
+- Dashboard with issue list, search, and status filter
+- Create issues with title and description
+- Issue workspace — update status, assign users, manage comments
+- Role-aware UI — admin can delete any comment, users can only delete their own
+- Responsive design with Tailwind CSS
 
-## React Compiler
+## Tech Stack
+- React 18 + Vite
+- React Router v6
+- Axios with JWT interceptor
+- React Hook Form
+- Context API for global auth state
+- Tailwind CSS v3
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages
+| Page | Route | Description |
+|------|-------|-------------|
+| Login | /login | JWT login |
+| Signup | /signup | Register account |
+| Dashboard | /dashboard | View and filter all issues |
+| Create Issue | /create-issue | New issue form with live preview |
+| Issue Workspace | /issue/:id | Edit issue, assign users, comments |
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/krishivperiwal/role-tracker-client
+cd role-tracker-client
+npm install
+npm run dev
+```
+
+Make sure the backend is running on `http://localhost:5000`.
+
+## Backend
+API repo: [role-based-issue-tracking-api](https://github.com/krishivperiwal/role-based-issue-tracking-api)
